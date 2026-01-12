@@ -1,7 +1,7 @@
 {
-  "name": "obsidian-sample-plugin",
+  "name": "obsidian-svelte-template",
   "version": "1.0.0",
-  "description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+  "description": "Svelte 5 + Tailwind CSS v4 template for Obsidian plugins",
   "main": "main.js",
   "type": "module",
   "scripts": {
@@ -9,6 +9,7 @@
     "build": "tsc -noEmit -skipLibCheck && svelte-check --tsconfig ./tsconfig.json && vite build --mode production",
     "svelte-check": "svelte-check --tsconfig ./tsconfig.json",
     "svelte-check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "check": "bun run lint:check && bun run svelte-check && bun run build",
     "version": "node version-bump.mjs && git add manifest.json versions.json",
     "lint": "eslint . --fix",
     "lint:check": "eslint . --max-warnings 0"

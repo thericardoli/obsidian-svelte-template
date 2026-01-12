@@ -51,13 +51,17 @@ Quick starting guide for new plugin devs:
 - `bun install` to install dependencies.
 - `bun run dev` to start compilation in watch mode.
 
+## CI / checks
+
+- `bun run check` to run `lint:check`, `svelte-check`, and `build`.
+
 ## Manually installing the plugin
 
 - Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
 
 ## Improve code quality with eslint
 - [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
-- This project already has eslint preconfigured, you can invoke a check by running`npm run lint`
+- This project already has eslint preconfigured, you can invoke it by running `bun run lint` or `bun run lint:check`.
 - Together with a custom eslint [plugin](https://github.com/obsidianmd/eslint-plugin) for Obsidan specific code guidelines.
 - A GitHub action is preconfigured to automatically lint every commit on all branches.
 

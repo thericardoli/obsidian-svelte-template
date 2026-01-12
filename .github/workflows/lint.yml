@@ -1,4 +1,4 @@
-name: Node.js build
+name: Check
 
 on:
     push:
@@ -7,7 +7,7 @@ on:
         branches: ["**"]
 
 jobs:
-    build:
+    check:
         runs-on: ubuntu-latest
 
         strategy:
@@ -21,8 +21,9 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
-                  cache: "npm"
-            - run: npm ci
-            - run: npm run build --if-present
-            - run: npm run lint
-
+            - name: Set up bun
+              uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: latest
+            - run: bun install --frozen-lockfile
+            - run: bun run check
