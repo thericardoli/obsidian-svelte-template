@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer base {
+	.obsidian-svelte-template {
+		--ost-surface-1: var(--background-primary);
+		--ost-surface-2: var(--background-secondary);
+		--ost-modal-bg: var(--modal-background, var(--ost-surface-1));
+		--ost-border: var(--modal-border-color, var(--background-modifier-border));
+		--ost-border-focus: var(--background-modifier-border-focus);
+
+		--ost-text: var(--text-normal);
+		--ost-muted: var(--text-muted);
+		--ost-faint: var(--text-faint);
+
+		--ost-hover: var(--background-modifier-hover);
+		--ost-active-hover: var(--background-modifier-active-hover);
+
+		--ost-accent: var(--interactive-accent);
+		--ost-accent-hover: var(--interactive-accent-hover);
+		--ost-on-accent: var(--text-on-accent);
+
+		--ost-radius: var(--modal-radius, 12px);
+	}
+}
