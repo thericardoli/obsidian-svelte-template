@@ -20,14 +20,7 @@ export default tseslint.config(
 				...globals.browser,
 			},
 			parserOptions: {
-				projectService: {
-					allowDefaultProject: [
-						'eslint.config.mts',
-						'svelte.config.js',
-						'tailwind.config.js',
-						'manifest.json'
-					]
-				},
+				project: ["./tsconfig.eslint.json"],
 				tsconfigRootDir,
 				extraFileExtensions: ['.json']
 			},

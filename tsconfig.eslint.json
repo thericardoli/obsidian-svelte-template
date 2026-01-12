@@ -1,0 +1,20 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"noEmit": true,
+		"allowJs": true,
+		"checkJs": false
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.d.ts",
+		"eslint.config.mts",
+		"vite.config.mts",
+		"svelte.config.js",
+		"tailwind.config.js",
+		"version-bump.mjs",
+		"manifest.json",
+		"versions.json"
+	]
+}
+
