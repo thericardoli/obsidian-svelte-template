@@ -1,1 +1,72 @@
 @import "tailwindcss";
+
+@layer base {
+	/*
+	Theme adapter layer:
+	- All `--ui-*` variables are direct aliases of Obsidian CSS variables.
+	- Apply `.obsidian-svelte-template` to the root element of your UI to scope these tokens.
+	*/
+	.obsidian-svelte-template {
+		/* Surfaces */
+		--ui-bg: var(--background-primary);
+		--ui-bg-alt: var(--background-primary-alt);
+		--ui-bg2: var(--background-secondary);
+		--ui-bg2-alt: var(--background-secondary-alt);
+		--ui-hover: var(--background-modifier-hover);
+		--ui-active-hover: var(--background-modifier-active-hover);
+		--ui-border: var(--background-modifier-border);
+		--ui-border-hover: var(--background-modifier-border-hover);
+		--ui-border-focus: var(--background-modifier-border-focus);
+		--ui-form-bg: var(--background-modifier-form-field);
+		--ui-msg-bg: var(--background-modifier-message);
+		--ui-success-bg: var(--background-modifier-success);
+		--ui-error-bg: var(--background-modifier-error);
+		--ui-error-bg-hover: var(--background-modifier-error-hover);
+
+		/* Interactive */
+		--ui-interactive: var(--interactive-normal);
+		--ui-interactive-hover: var(--interactive-hover);
+		--ui-accent: var(--interactive-accent);
+		--ui-accent-hover: var(--interactive-accent-hover);
+		--ui-accent-hsl: var(--interactive-accent-hsl);
+
+		/* Text */
+		--ui-text: var(--text-normal);
+		--ui-muted: var(--text-muted);
+		--ui-faint: var(--text-faint);
+		--ui-on-accent: var(--text-on-accent);
+		--ui-on-accent-inv: var(--text-on-accent-inverted);
+		--ui-text-accent: var(--text-accent);
+		--ui-text-accent-hover: var(--text-accent-hover);
+		--ui-text-success: var(--text-success);
+		--ui-text-warning: var(--text-warning);
+		--ui-text-error: var(--text-error);
+
+		/* Selection / caret */
+		--ui-selection: var(--text-selection);
+		--ui-highlight: var(--text-highlight-bg);
+		--ui-caret: var(--caret-color);
+
+		/* Extended palette */
+		--ui-red: var(--color-red);
+		--ui-orange: var(--color-orange);
+		--ui-yellow: var(--color-yellow);
+		--ui-green: var(--color-green);
+		--ui-cyan: var(--color-cyan);
+		--ui-blue: var(--color-blue);
+		--ui-purple: var(--color-purple);
+		--ui-pink: var(--color-pink);
+
+		/* Modal component */
+		--ui-modal-bg: var(--modal-background);
+		--ui-modal-border: var(--modal-border-color);
+		--ui-modal-border-w: var(--modal-border-width);
+		--ui-modal-radius: var(--modal-radius);
+		--ui-modal-w: var(--modal-width);
+		--ui-modal-h: var(--modal-height);
+		--ui-modal-max-w: var(--modal-max-width);
+		--ui-modal-max-h: var(--modal-max-height);
+		--ui-modal-max-w-narrow: var(--modal-max-width-narrow);
+		--ui-modal-community-sidebar-w: var(--modal-community-sidebar-width);
+	}
+}
