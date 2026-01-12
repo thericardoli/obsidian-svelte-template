@@ -21,10 +21,7 @@ const OBSIDIAN_EXTERNAL = [
 	"@lezer/lr",
 ];
 
-const NODE_EXTERNAL = [
-	...builtinModules,
-	...builtinModules.map((m) => `node:${m}`),
-];
+const NODE_EXTERNAL = [...builtinModules, ...builtinModules.map((m) => `node:${m}`)];
 
 export default defineConfig(({ mode }) => {
 	const prod = mode === "production";
@@ -59,17 +56,17 @@ export default defineConfig(({ mode }) => {
 			},
 			rollupOptions: {
 				external: [...OBSIDIAN_EXTERNAL, ...NODE_EXTERNAL],
-					output: {
-						format: "cjs",
-						entryFileNames: "main.js",
-						inlineDynamicImports: true,
-						assetFileNames: (assetInfo) => {
-							const names = assetInfo.names ?? [];
-							if (names.some((n) => n.endsWith(".css"))) return "styles.css";
-							return "assets/[name][extname]";
-						},
+				output: {
+					format: "cjs",
+					entryFileNames: "main.js",
+					inlineDynamicImports: true,
+					assetFileNames: (assetInfo) => {
+						const names = assetInfo.names ?? [];
+						if (names.some((n) => n.endsWith(".css"))) return "styles.css";
+						return "assets/[name][extname]";
 					},
 				},
+			},
 		},
 	};
 });

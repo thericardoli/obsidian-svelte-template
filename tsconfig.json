@@ -14,13 +14,7 @@
 		"strictBindCallApply": true,
 		"allowSyntheticDefaultImports": true,
 		"useUnknownInCatchVariables": true,
-		"lib": [
-			"DOM",
-			"ES2022"
-		]
+		"lib": ["DOM", "ES2022"]
 	},
-	"include": [
-		"src/**/*.ts",
-		"src/**/*.d.ts"
-	]
+	"include": ["src/**/*.ts", "src/**/*.d.ts"]
 }

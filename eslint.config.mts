@@ -1,7 +1,8 @@
-import tseslint from 'typescript-eslint';
+import tseslint from "typescript-eslint";
 import obsidianmd from "eslint-plugin-obsidianmd";
 import globals from "globals";
 import { globalIgnores } from "eslint/config";
+import eslintConfigPrettier from "eslint-config-prettier";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -9,7 +10,8 @@ const tsconfigRootDir = path.dirname(fileURLToPath(import.meta.url));
 
 const obsidianRecommended = obsidianmd.configs?.recommended as unknown;
 const obsidianRecommendedConfigs =
-	obsidianRecommended && typeof (obsidianRecommended as { [Symbol.iterator]?: unknown })[Symbol.iterator] === "function"
+	obsidianRecommended &&
+	typeof (obsidianRecommended as { [Symbol.iterator]?: unknown })[Symbol.iterator] === "function"
 		? Array.from(obsidianRecommended as Iterable<unknown>)
 		: [];
 
@@ -22,11 +24,12 @@ export default tseslint.config(
 			parserOptions: {
 				project: ["./tsconfig.eslint.json"],
 				tsconfigRootDir,
-				extraFileExtensions: ['.json']
+				extraFileExtensions: [".json"],
 			},
 		},
 	},
 	...obsidianRecommendedConfigs,
+	eslintConfigPrettier,
 	globalIgnores([
 		"node_modules",
 		"dist",
